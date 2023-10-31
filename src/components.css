@@ -1,0 +1,166 @@
+
+
+/* Style du bouton Discord en mode sombre */
+button {
+    background-color: #2C2F33; /* Couleur de fond sombre */
+    color: #ffffff; /* Couleur du texte en mode sombre */
+    border: none; /* Pas de bordure */
+    padding: 10px 20px; /* Espacement interne du bouton */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur au survol */
+    font-size: 16px; /* Taille de la police */
+    font-weight: bold; /* Gras */
+    text-align: center; /* Centrer le texte */
+    text-decoration: none; /* Pas de soulignement */
+    display: inline-block; /* Afficher en tant qu'élément en ligne */
+    transition: background-color 0.3s ease; /* Transition en douceur de la couleur de fond */
+  }
+  
+/* Style du bouton sombre au survol */
+button:hover {
+  background-color: #3E4147; /* Nouvelle couleur de fond au survol */
+}
+
+button:focus {
+  outline: none;
+}
+
+
+/* Style du bouton Discord en mode sombre (Primary Button) */
+.button-primary {
+  background-color: #5865F2; /* Couleur de fond du bouton Discord principal */
+  color: #ffffff; /* Couleur du texte en mode sombre */
+  border: none; /* Pas de bordure */
+  padding: 10px 20px; /* Espacement interne du bouton */
+  border-radius: 5px; /* Coins arrondis */
+  cursor: pointer; /* Curseur au survol */
+  font-size: 16px; /* Taille de la police */
+  font-weight: bold; /* Gras */
+  text-align: center; /* Centrer le texte */
+  text-decoration: none; /* Pas de soulignement */
+  display: inline-block; /* Afficher en tant qu'élément en ligne */
+  transition: background-color 0.3s ease; /* Transition en douceur de la couleur de fond */
+}
+
+/* Style du bouton Discord en mode sombre (Primary Button) au survol */
+.button-primary:hover {
+  background-color: #4248DB; /* Nouvelle couleur de fond au survol */
+}
+
+/* Style du bouton Discord en mode sombre (Secondary Button) */
+.button-secondary {
+  background-color: #7289DA; /* Couleur de fond du bouton Discord secondaire */
+  color: #ffffff; /* Couleur du texte en mode sombre */
+  border: none; /* Pas de bordure */
+  padding: 10px 20px; /* Espacement interne du bouton */
+  border-radius: 5px; /* Coins arrondis */
+  cursor: pointer; /* Curseur au survol */
+  font-size: 16px; /* Taille de la police */
+  font-weight: bold; /* Gras */
+  text-align: center; /* Centrer le texte */
+  text-decoration: none; /* Pas de soulignement */
+  display: inline-block; /* Afficher en tant qu'élément en ligne */
+  transition: background-color 0.3s ease; /* Transition en douceur de la couleur de fond */
+}
+
+/* Style du bouton Discord en mode sombre (Secondary Button) au survol */
+.button-secondary:hover {
+  background-color: #677BC4; /* Nouvelle couleur de fond au survol */
+}
+
+.button-tertiary {
+  background-color: #ffffff;
+  color: #333333;
+  border: 1px solid #333333;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button-tertiary:hover {
+  background-color: #eee;
+  color: #333333;
+}
+
+.button-small {
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+button:disabled {
+  background-color: #B9BBBE !important;
+  cursor: not-allowed;
+}
+
+
+/* Style de l'input text Discord */
+input {
+  background-color: #2C2F33; /* Couleur de fond du champ de texte Discord */
+  color: #ffffff; /* Couleur du texte en mode sombre */
+  border: 1px solid #40444B; /* Bordure du champ de texte */
+  border-radius: 5px; /* Coins arrondis */
+  padding: 10px; /* Espacement interne du champ de texte */
+  font-size: 14px; /* Taille de la police */
+  width: 100%; /* Largeur du champ de texte */
+  box-sizing: border-box; /* Inclure la bordure et le remplissage dans la largeur totale */
+  outline: none; /* Supprimer la bordure de focus par défaut */
+  transition: border-color 0.3s ease; /* Transition en douceur de la couleur de bordure */
+}
+
+/* Style de l'input text Discord au survol */
+input:hover {
+  border-color: #7289DA; /* Nouvelle couleur de bordure au survol */
+  border-color: #fff;
+}
+
+/* Style de l'input text Discord lorsqu'il est en focus */
+input:focus {
+  border-color: #7289DA; /* Couleur de bordure lorsque le champ de texte est en focus */
+  border-color: #fff;
+}
+
+/* Style du select Discord */
+select {
+  background-color: #2C2F33; /* Couleur de fond du select Discord */
+  color: #ffffff; /* Couleur du texte en mode sombre */
+  border: 1px solid #40444B; /* Bordure du select */
+  border-radius: 5px; /* Coins arrondis */
+  padding: 10px; /* Espacement interne du select */
+  font-size: 14px; /* Taille de la police */
+  width: 100%; /* Largeur du select */
+  box-sizing: border-box; /* Inclure la bordure et le remplissage dans la largeur totale */
+  outline: none; /* Supprimer la bordure de focus par défaut */
+  transition: border-color 0.3s ease; /* Transition en douceur de la couleur de bordure */
+}
+
+/* Style du select Discord au survol */
+select:hover {
+  border-color: #7289DA; /* Nouvelle couleur de bordure au survol */
+  border-color: #fff;
+}
+
+/* Style du select Discord lorsqu'il est en focus */
+select:focus {
+  border-color: #7289DA; /* Couleur de bordure lorsque le select est en focus */
+  border-color: #fff;
+}
+
+/* Style pour personnaliser les options dans le select */
+select option {
+  background-color: #2C2F33; /* Couleur de fond des options du select */
+  color: #ffffff; /* Couleur du texte des options */
+}
+
+/* Style pour personnaliser l'option sélectionnée dans le select */
+select option:checked {
+  /*background-color: #7289DA;*/ /* Couleur de fond de l'option sélectionnée */
+  /*color: #ffffff;*/ /* Couleur du texte de l'option sélectionnée */
+}
+
+.form-title {
+  font-size: 16px; /* Taille de la police */
+  font-weight: bold; /* Gras */
+  color: #ffffff; /* Couleur du texte en mode sombre */
+  margin-bottom: 10px; /* Espacement en bas du champ de titre */
+}

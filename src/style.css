@@ -1,3 +1,31 @@
+/* @import url(./fonts.css); */
+@import url(./components.css);
+
+:root {
+  --darker-bg-color-rgb: 30, 31, 34;
+  --primary-bg-color-rgb: 49, 51, 56;
+  --primary-txt-color-rgb: 242, 243, 245;
+  --secondary-bg-color-rgb: 46, 48, 53;
+  --drag-height: 2rem;
+  --action-bar-height: 4rem;
+}
+
+html, body {
+  overflow: hidden;
+  margin: 0;
+  font-family: 'Comfortaa', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 10px;
+}
+
+#app {
+  font-size: 1.3rem;
+  min-height: 100vh;
+  background: rgb(var(--primary-bg-color-rgb));
+  color: rgb(var(--primary-txt-color-rgb));
+  border-top: 0;
+}
+
+/* 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -87,4 +115,4 @@ code {
   code {
     background-color: #f9f9f9;
   }
-}
+} */

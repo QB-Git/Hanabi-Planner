@@ -1,3 +1,16 @@
+import { contextBridge, ipcRenderer } from 'electron'
+
+contextBridge.exposeInMainWorld('app', {
+  addAnime: (day: string, title: string) => ipcRenderer.invoke('addAnime', day, title),
+  getAnime: (uuid: string) => ipcRenderer.invoke('getAnime', uuid),
+  getAnimes: () => ipcRenderer.invoke('getAnimes'),
+  editAnime: (uuid: string, day: string, title: string) => ipcRenderer.invoke('editAnime', uuid, day, title),
+  setEpisodes: (uuid: string, nbEpisodes: Number) => ipcRenderer.invoke('setEpisodes', uuid, nbEpisodes),
+  deleteAnime: (uuid: string) => ipcRenderer.invoke('deleteAnime', uuid),
+  setContextualMenu: (uuid: string, x: Number, y: Number) => ipcRenderer.send('show-context-menu', uuid, x, y),
+});
+
+
 function domReady(condition: DocumentReadyState[] = ['complete', 'interactive']) {
   return new Promise((resolve) => {
     if (condition.includes(document.readyState)) {
