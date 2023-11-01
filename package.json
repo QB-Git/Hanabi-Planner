@@ -36,6 +36,8 @@
   },
   "dependencies": {
     "electron-store": "^8.1.0",
+    "sortablejs": "^1.15.0",
+    "sortablejs-vue3": "^1.2.10",
     "uuid": "^9.0.1",
     "vuedraggable": "^4.1.0"
   }

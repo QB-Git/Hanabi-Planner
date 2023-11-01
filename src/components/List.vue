@@ -1,21 +1,37 @@
 <template>
-    <div class="container">
+    <div class="container" >
         <div v-for="day in ['#', ...listDays]" :key="day" :data-day="day">
             <div v-if="weekAnimes[day] && weekAnimes[day].length > 0" class="day">{{ day }}</div>
-            <div
-                v-for="anime in weekAnimes[day]"
-                :key="anime.uuid"
-                class="item"
-                :data-uuid="anime.uuid"
-                @contextmenu="addContextualMenuForItem($event, anime.uuid)"
+            <Sortable
+                :list="weekAnimes[day]"
+                item-key="uuid"
+                :options="{
+                    animation: 150,
+                    ghostClass: 'ghost',
+                    dragClass: 'drag',
+                    group: 'testgroup',
+                    scroll: true,
+                    forceFallback: true,
+                    bubbleScroll: true,
+                }"
             >
-                <span class="item__title">{{ anime.title }}</span>
-                <span class="item__episodes">
-                    <!-- <span class="input-number-decrement" @click="decrementEpisodes(anime.episodes, anime.uuid)">–</span> -->
-                    <input class="input-number" @input="e => changeEpisodes(e.target.valueAsNumber, anime.uuid)" type="number" :value="anime.episodes" min="0">
-                    <span class="input-number-increment" @click="incrementEpisodes(anime.episodes, anime.uuid)">＋</span>
-                </span>
-            </div>
+                <template #item="{element, index}">
+                    <div
+                        :ref="() => weekAnimes[day]"
+                        :key="element.uuid"
+                        class="draggable item"
+                        :data-uuid="element.uuid"
+                        @contextmenu="addContextualMenuForItem($event, element.uuid)"
+                    >
+                        <span class="item__title">{{ element.title }}</span>
+                        <span class="item__episodes">
+                            <!-- <span class="input-number-decrement" @click="decrementEpisodes(anime.episodes, anime.uuid)">–</span> -->
+                            <input class="input-number" @input="e => changeEpisodes(e.target.valueAsNumber, element.uuid)" type="number" :value="element.episodes" min="0">
+                            <span class="input-number-increment" @click="incrementEpisodes(element.episodes, element.uuid)">＋</span>
+                        </span>
+                    </div>
+                </template>
+            </Sortable>
         </div>
     </div>
     <Teleport to="body">
@@ -24,7 +40,9 @@
 </template>
 
 <script setup lang="ts">
-    import Modal from './Modal.vue'
+    import Modal from './Modal.vue';
+    import { Sortable } from "sortablejs-vue3";
+
     import { ref, onMounted } from 'vue';
 
     const weekAnimes = ref({});
@@ -104,6 +122,7 @@
   gap: .5rem;
   align-items: center;
   justify-content: space-between;
+  cursor: move;
 }
 
 .item:hover {
@@ -165,5 +184,14 @@
 .input-number-decrement:active,
 .input-number-increment:active {
   background: rgb(var(--secondary-bg-color-rgb));
+}
+
+.ghost {
+    opacity: 0.5;
+    border: 1px dashed #ccc;
+}
+
+.drag {
+    background: #000000;
 }
 </style>
